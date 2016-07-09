@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+#auther:Takuro Ishida
+#student id:16966003
+#date:04 July 2016
+
+#define SVM
+import matplotlib.pyplot as plt
+from sklearn import datasets, svm, metrics
+clf=svm.SVC()
+from sklearn import datasets
+from sklearn.svm import SVC
+
+#load iris deta and iris target
+iris = datasets.load_iris()
+x,y=iris.data,iris.target
+
+#train deta randomly
+from sklearn.cross_validation import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=75)
+print("Training Sized: %d and Testing size: %d\n" %(x_train.shape[0],x_test.shape[0]))
+
+#train the classification
+clf.fit(x_train,y_train)
+
+
+predicted=clf.predict(x_test)
+expected=y_test
+print("Classification report for classifier %s:\n%s\n"%(clf,metrics.classification_report(expected,predicted)))
+
+print("Confusion Matrix:\n%s"%metrics.confusion_matrix(expected,predicted))

@@ -1,0 +1,14 @@
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00        14
+          1       1.00      0.88      0.93        16
+          2       0.88      1.00      0.94        15
+
+avg / total       0.96      0.96      0.96        45
+
+
+Confusion matrix:
+[[14  0  0]
+ [ 0 14  2]
+ [ 0  0 15]]
+
